@@ -1,0 +1,115 @@
+<html><head>
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta charset="utf-8">
+  <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ELMAWQE3</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style2.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/ab8900e115.js" crossorigin="anonymous"></script>
+    <title>first page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+    <link rel="stylesheet" href="style1.css" type="text/css">
+    <meta charset="utf-8">
+    <title>first page</title>
+<script>
+function load(){
+if(localStorage.getItem('@User'))
+document.getElementById('ln').innerHTML='<a href = "logout.html">Logout</a>'
+else
+document.getElementById('ln').innerHTML='<a href = "login.html">Log in\Register</a>'
+
+
+if(localStorage.getItem('@User')=='Omar'){
+var ad = document.createElement('li');
+ad.innerHTML='<a href = "admin.html">Admin</a>';
+document.getElementById('nb').appendChild(ad);
+}
+
+if(localStorage.getItem('@Color'))
+document.body.style.color=localStorage.getItem('@Color');
+
+if(localStorage.getItem('@bgColor'))
+document.body.style.background=localStorage.getItem('@bgColor');
+
+if(localStorage.getItem('@font'))
+document.body.style.fontFamily=localStorage.getItem('@font');
+}
+
+function logout(){
+localStorage.removeItem('@User');
+window.location.href="login.html";
+
+}
+
+</script></head>
+
+<body onload='load()'>
+ <header>
+            <div class = "navigation-container">
+                <div class = "top-head">
+                    <div class = "web-name">
+                        <h1><img src="aaa.jpeg">ELMAWQE3</h1>
+                    </div>
+
+                    <div class = "ham-btn">
+                        <span>
+                            <i class = "fas fa-bars"></i>
+                        </span>
+                    </div>
+
+                    <div class = "times-btn">
+                        <span>
+                            <i class = "fas fa-times"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- nav bar -->
+
+                <div class = "nav-bar" id = "nav-bar">
+                    <nav>
+                        <ul id='nb'>
+                            <li><a href = "home.html">Home</a></li>
+                            <li><a href = "discussion.html">Discussion</a></li>
+                            <li><a href = "subscribe.html">Subscribe</a></li>
+                            <li id='ln'><a href = "login.html">Log in\Register</a></li>
+                            <li><a href = "cred.html">About</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!--social icons -->
+                <div class = "social-icons">
+                    <ul>
+                        <li>
+                            <a href= "#"><i class = "fab fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href= "#"><i class = "fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href= "#"><i class = "fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href= "#"><i class = "fab fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+<center>
+<div class='form'><h6><b><font size='5'>Are you sure you want to logout?</font></b></h6><br><br>
+
+<input type='button' class='button' onclick='logout()' value='Yes'>
+
+</center>
+</body>

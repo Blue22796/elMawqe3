@@ -1,0 +1,68 @@
+body{
+  background-color: #E8DD89;
+  font-family: Montserrat;
+  transition: 0.9s;
+  opacity: 0.4;
+}
+body:hover{
+  opacity: 1;
+}
+.description{
+  margin: 10px 10px;
+  transition: 0.9s;
+  font-size: 20px;
+}
+.description:hover{
+  font-size: 30px;
+}
+.description-p{
+  font-size: 15px;
+  transition: 0.9s;
+}
+.description-p:hover{
+  font-size: 20px;
+}
+.about-me1 , .about-me2{
+      /*background-color: #A2744A;*/
+      margin: auto;
+      margin-right: 0;
+      padding: 10px 10px;
+/*
+      border-style: solid;
+      border-color: black;
+      border-radius: 20px;
+*/
+      width: 50%;
+      height: auto;
+}
+.about-me2{
+      margin: 10px 10px;
+}
+.profile-pic1, .profile-pic2{
+ -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+      display: inline-block;
+      transition: 0.9s;
+      width: 150px;
+      height: 150px;
+      float: right;
+      margin-right: 20px;
+}
+.profile-pic1:hover, .profile-pic2:hover{
+  width: 200px;
+  height: 200px;
+}
+.user-name1, .user-name2{
+      transition: 0.9s;
+      display: inline-block;
+      font-size: 40px;
+      padding-top: 40px;
+      font-weight: bold;
+}
+.user-name1:hover, .user-name2:hover{
+  letter-spacing: 5px;
+}
+.profile-pic2{
+  float: left;
+}
