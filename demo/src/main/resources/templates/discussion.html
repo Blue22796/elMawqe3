@@ -6,7 +6,7 @@
         <title>ELMAWQE3</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style2.css">
+        <link rel="stylesheet" href="public/css/style2.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -15,7 +15,6 @@
 
 
 <script>
-
 if(localStorage.getItem('@Color'))
 document.body.style.color=localStorage.getItem('@Color');
 
@@ -24,8 +23,6 @@ document.body.style.background=localStorage.getItem('@bgColor');
 
 if(localStorage.getItem('@font'))
 document.body.style.fontFamily=localStorage.getItem('@font');
-
-
 </script>
 </head>
 
@@ -37,7 +34,7 @@ document.body.style.fontFamily=localStorage.getItem('@font');
             <div class = "navigation-container">
                 <div class = "top-head">
                     <div class = "web-name">
-                        <h1><img src="aaa.jpeg">ELMAWQE3</h1>
+                        <h1><img src="public/imgs/aaa.jpeg">ELMAWQE3</h1>
                     </div>
 
                     <div class = "ham-btn">
@@ -58,8 +55,8 @@ document.body.style.fontFamily=localStorage.getItem('@font');
                 <div class = "nav-bar" id = "nav-bar">
                     <nav>
                         <ul id='nb'>
-                            <li><a href = "home">home</a></li>
-                            <li><a href = "discussion">Disscution</a></li>
+                            <li><a href = "home">Home</a></li>
+                            <li><a href = "discussion">Discussion</a></li>
                             <li><a href = "subscribe">Subscribe</a></li>
                             <li id='ln'><a href = "login">Log in\Register</a></li>
                             <li><a href = "cred">About</a></li>
@@ -94,8 +91,8 @@ document.body.style.fontFamily=localStorage.getItem('@font');
 </p>
 </div>
 
-
+<form method = 'POST' action = '/comment'>
 <input type='text' id='in' placeholder='Type a comment...'>
-<input type='button'value='Add comment' onclick="comment()" class='dis'>
-
+<input type='submit'value='Add comment' class='dis'>
+</form>
 </body></html>

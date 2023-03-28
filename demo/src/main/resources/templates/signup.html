@@ -1,38 +1,33 @@
 <!Doctype html>
 <html lang="en">
 
-<head>
-
- <meta charset="utf-8">
-            <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/public/css/style2.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/ab8900e115.js" crossorigin="anonymous"></script>
-    <title>Login</title>
+<head>       
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/public/css/style2.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/ab8900e115.js" crossorigin="anonymous"></script>
+    
+<title>Sign up</title>
 
 
 <script>
 if(localStorage.getItem('@Color'))
 document.body.style.color=localStorage.getItem('@Color');
-
 if(localStorage.getItem('@bgColor'))
 document.body.style.background=localStorage.getItem('@bgColor');
-
 if(localStorage.getItem('@font'))
 document.body.style.fontFamily=localStorage.getItem('@font');
 </script>
-
 </head>
 
-<body><center>
+<body>
+<center>
 
-
- <!-- header -->
  <header>
             <div class = "navigation-container">
                 <div class = "top-head">
@@ -58,10 +53,10 @@ document.body.style.fontFamily=localStorage.getItem('@font');
                 <div class = "nav-bar" id = "nav-bar">
                     <nav>
                         <ul id='nb'>
-                            <li><a href = "home">home</a></li>
-                            <li><a href = "discussion">Disscution</a></li>
+                            <li><a href = "home">Home</a></li>
+                            <li><a href = "discussion">Discussion</a></li>
                             <li><a href = "subscribe">Subscribe</a></li>
-                            <li id='ln'></li>
+                            <li id='ln'><a href = "login">Log in\Register</a></li>
                             <li><a href = "cred">About</a></li>
                         </ul>
                     </nav>
@@ -88,22 +83,36 @@ document.body.style.fontFamily=localStorage.getItem('@font');
         </header>
 
 
-    <div>
-         <form method='post' action='/login'>
-            <h1>login</h1>
+
+    <div class="login">
+        <div class="form1">
+<div>
+            <h1 class='login'>Signup</h1>
+<form action='signup' method='post'>
                 <div class="in">
+                    <label for="text" class="label">Username</label> <br>
+                    <input id="name" name="Username" placeholder="Username">
+                </div>
+                <div class="in">
+                    <label for="text" class="label">E-mail</label> <br>
+                    <input type="email" placeholder="mldkokd@gmail.com" id="mail" name="email">
+                </div>
+
+                <div class="in">
+                    <label for="pass" class="label">password</label> <br>
+                    <input type="password" placeholder="password" id="password" class="word" minlength="8" name="password"
+                        required>
+                </div>
                 
-                    <label for="text" class="label">Email</label> <br>
-                    <input id="name1" name="username" placeholder="email">
-                </div>
-                <div class="in"> <label for="pass" class="login">password</label> <br>
-                    <input type="password" placeholder="password" id="password1" class="word" minlength="8" name="password">
-                </div>
-               <div class='in'> <p class='login'>don't have account?<a href="signup">sign up</a><br><br>
-                <input type="submit" value="login" class="blogin">
+              
+              
+                <div class='login'> <input type="submit" value="submit" class="blogin">
+                <p class='login'><b>i already have account! </b><a href="login">login</a>
                 </p></div>
-   </form>
-    </div>
+                </form> 
+                </div>
+        </div>
+    </div></div>
 </center></body>
 
 </html>

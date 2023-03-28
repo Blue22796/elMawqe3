@@ -17,6 +17,5 @@ public class DiscussionController {
 	public String disc(Model mod) {
 		mod.addAttribute("board", bServ.getAll());
 		return "discussion.html";
-		
 	}
 }

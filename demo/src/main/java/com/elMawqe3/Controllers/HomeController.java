@@ -6,12 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.elMawqe3.Models.Event;
 import com.elMawqe3.Services.newsService;
 
 @Controller
-public class NewsController {
+public class HomeController {
 	
 	@Autowired
 	newsService service;
@@ -29,8 +30,13 @@ public class NewsController {
 		return"update.html";
 	}
 		
+	@GetMapping("/cred")
+	public String cred() {
+		return "cred.html";
+	}
+	
 	@PostMapping("/news")
-	public String insert(@RequestParam String headline,
+	public RedirectView insert(@RequestParam String headline,
 			@RequestParam String details, @RequestParam String author,
 			@RequestParam String pPath, Model model) 
 	{
@@ -43,6 +49,6 @@ public class NewsController {
 		
 		model.addAttribute("news",service.events());
 		service.insert(newEvent);
-		return "home.html";
+		return new RedirectView("/home");
 	}
 }
