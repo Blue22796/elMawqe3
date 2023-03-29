@@ -1,6 +1,7 @@
 package com.elMawqe3.Models;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -56,7 +57,7 @@ public class User implements UserDetails{
 	@JoinTable(name = "user_role",
 	joinColumns = @JoinColumn(name = "user_id"),
 	inverseJoinColumns = @JoinColumn(name = "role_id"))
-	public Set<Role> roles;
+	public Set<Role> roles = new HashSet<>();
 	
 	public User(@Valid UserDto newUser) {
 		this.username=newUser.getUsername();
@@ -97,5 +98,9 @@ public class User implements UserDetails{
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return true;
+	}
+	
+	public String say(String something) {
+		return this.username+": "+something;
 	}
 }

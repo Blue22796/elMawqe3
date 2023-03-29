@@ -1,0 +1,21 @@
+<link rel="stylesheet" type="text/css" href="/public/css/navStyle.css">
+<nav class="navbar">
+  <a class="navbar-brand" href="home">My Website</a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="login" th:unless="${#authorization.expression('isAuthenticated()')}">Login</a>
+    </li>
+     <li class="nav-item">
+      <a class="nav-link" href="logout" th:if="${#authorization.expression('isAuthenticated()')}">Logout</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="discussion">Discussion</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="cred">Credits</a>
+    </li>
+  </ul>
+</nav>

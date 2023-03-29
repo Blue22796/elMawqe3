@@ -1,98 +1,24 @@
+<!DOCTYPE html>
 <html>
 <head>
- <meta charset="utf-8">
-            <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>ELMAWQE3</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="public/css/style2.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/ab8900e115.js" crossorigin="anonymous"></script>
-
-
-
-<script>
-if(localStorage.getItem('@Color'))
-document.body.style.color=localStorage.getItem('@Color');
-
-if(localStorage.getItem('@bgColor'))
-document.body.style.background=localStorage.getItem('@bgColor');
-
-if(localStorage.getItem('@font'))
-document.body.style.fontFamily=localStorage.getItem('@font');
-</script>
+	<title>Chat Page</title>
+	<link rel="stylesheet" type="text/css" href="/public/css/distyle.css">
 </head>
-
 <body>
-
-
- <!-- header -->
- <header>
-            <div class = "navigation-container">
-                <div class = "top-head">
-                    <div class = "web-name">
-                        <h1><img src="public/imgs/aaa.jpeg">ELMAWQE3</h1>
-                    </div>
-
-                    <div class = "ham-btn">
-                        <span>
-                            <i class = "fas fa-bars"></i>
-                        </span>
-                    </div>
-
-                    <div class = "times-btn">
-                        <span>
-                            <i class = "fas fa-times"></i>
-                        </span>
-                    </div>
-                </div>
-
-                <!-- nav bar -->
-
-                <div class = "nav-bar" id = "nav-bar">
-                    <nav>
-                        <ul id='nb'>
-                            <li><a href = "home">Home</a></li>
-                            <li><a href = "discussion">Discussion</a></li>
-                            <li><a href = "subscribe">Subscribe</a></li>
-                            <li id='ln'><a href = "login">Log in\Register</a></li>
-                            <li><a href = "cred">About</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!--social icons -->
-                <div class = "social-icons">
-                    <ul>
-                        <li>
-                            <a href= "#"><i class = "fab fa-facebook"></i></a>
-                        </li>
-                        <li>
-                            <a href= "#"><i class = "fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href= "#"><i class = "fab fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href= "#"><i class = "fab fa-youtube"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-<hr><br><br>
-<div class="anon" th:each="msg:${board}">
-<p><b><u style="color:#770011" th:text = ${msg.getAuthor()}></u></b>
-<br>
-<i th:text=${msg.getContent()}></i>
-</p>
-</div>
-
-<form method = 'POST' action = '/comment'>
-<input type='text' id='in' placeholder='Type a comment...'>
-<input type='submit'value='Add comment' class='dis'>
-</form>
-</body></html>
+	<header>
+	 <header th:insert='navbar.html'></header>
+		<h1>Chat Page</h1>
+	</header>
+	<main>
+		<div class="chat-window">
+			<ul th:each='comment:${board}'>
+			<li class="message" th:text=${comment.getAuthor().say(comment.getContent())}>: Hey there!</li>
+			</ul>
+		</div>
+		<form class="message-form" method ='post' action = 'comment'>
+			<input type="text" placeholder="Type your message here..." name = 'msg'>
+			<button type="submit">Send</button>
+		</form>
+	</main>
+</body>
+</html>

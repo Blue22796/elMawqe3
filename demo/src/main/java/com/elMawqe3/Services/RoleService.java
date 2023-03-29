@@ -11,11 +11,16 @@ public class RoleService {
 	@Autowired
 	private RoleRepository RR;
 	
-	public Role getAdminRole() {
-		return RR.findByName("admin").get(0);
-	}
-	
-	public Role getUserRole() {
-		return RR.findByName("user").get(0);
+	public Role getRole(String role) {
+		Role UR;
+		try {
+			UR= RR.findByName(role).get(0);
+		}
+		catch(IndexOutOfBoundsException inx){
+			UR = new Role();
+			UR.setName(role);
+			RR.save(UR);
+		}
+		return UR;
 	}
 }

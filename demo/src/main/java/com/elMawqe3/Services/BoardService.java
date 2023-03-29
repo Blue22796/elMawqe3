@@ -19,4 +19,8 @@ public class BoardService {
 	public List<Comment> getAll(){
 		return bRepo.findAll();
 	}
+
+	public void save(Comment cmt) {
+		bRepo.save(cmt);
+	}
 }

@@ -32,7 +32,7 @@ public class LoginController {
 	
 	@GetMapping("/login")
 	public String loginPage() {
-		return "login.html";
+		return "signin.html";
 	}
 	
 	
@@ -54,11 +54,11 @@ public class LoginController {
 			 BindingResult result) {
 		 try {
 			 User user = new User(nuser);
-			 user.roles.add(roleService.getUserRole());
+			 user.roles.add(roleService.getRole("USER"));
 		     userService.saveUser(user);
 		     return new RedirectView("/home") ;
 		    } catch (Exception uaeEx) {
-		        return new RedirectView("/signup?error=true");
+		        return new RedirectView("/login?error=true");
 		    }
 		
 		

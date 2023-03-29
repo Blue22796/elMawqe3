@@ -17,7 +17,10 @@ public class HomeController {
 	@Autowired
 	newsService service;
 	
-	
+	@GetMapping("/")
+	public RedirectView def() {
+		return new RedirectView("/home");
+	}
 	
 	@GetMapping("/home")
 	public String hp(Model model) {
